@@ -122,7 +122,7 @@ function About() {
           <div id={s.Position}>Full stack Developer</div>
           <div id={s.Bio}>
             <div id={s.BioTittle}>
-              Bio
+              Bio<span className={s.red}>.</span>
             </div>
             <div id={s.BioText}>
               {`Hi, my name is Tomas, I'm from argentina and I'm an aspiring software Developer looking for my first working experience on the software develpoment industry, I'm currently studying software web develpoment at a bootcamp called Henry.`}

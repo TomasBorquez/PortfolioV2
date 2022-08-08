@@ -27,5 +27,5 @@ export const Layout = ({ children, title }: Props) => {
 };
 
 Layout.defaultProps = {
-  title: 'Tomas Borquez | Portfolio'
+  title: 'Portfolio | Tomas Borquez'
 }

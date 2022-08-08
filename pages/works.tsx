@@ -3,7 +3,7 @@ import { Layout } from '../components/Layout/Layout'
 
 const works = () => {
   return (
-    <Layout>
+    <Layout title={'Works | Tomas Borquez'}>
       <h1>WIP!</h1>
     </Layout>
   )
