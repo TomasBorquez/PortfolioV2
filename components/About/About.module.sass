@@ -1,11 +1,11 @@
 #AboutBox
-  position: absolute
+  position: relative
   display: flex
   border-radius: 7px
-  top: 85px
   width: 1000px
-  padding-left: 6px
-  background-color: #0e0e0e91
+  padding: 6px
+  background-color: rgba(14, 14, 14, 0.568627451)
+  -webkit-backdrop-filter: blur(6px)
   backdrop-filter: blur(6px)
 
 .container
@@ -15,7 +15,6 @@
 
 .red
   color: #db6262
-  padding-left: 1px
 
 #centerMe
   display: flex
@@ -41,8 +40,10 @@
   padding: 8px 8px
   position: absolute
   bottom: 18px
+  transition: 0.3s
   &:hover
     background-color: #1a2060
+    transition: 0.3s
 
 #svgCV
   position: relative
@@ -69,8 +70,10 @@
   position: absolute
   bottom: 21px
   left: 150px
+  transition: 0.3s
   &:hover
     background-color: #1a2060
+    transition: 0.3s
 
 #svgG
   position: relative
@@ -96,8 +99,10 @@
   position: absolute
   bottom: 21px
   left: 185px
+  transition: 0.3s
   &:hover
     background-color: #1a2060
+    transition: 0.3s
 
 #svgL
   position: relative
@@ -107,20 +112,27 @@
 /* ------------------- */
 /* Button for Portfolio */
 /* ------------------- */
-#MyPortfolio
+#myProjects
   border: none
   border-radius: 10px
   color: white
-  background-color: #2e304787
+  background-color: #474b7187
   cursor: pointer
   font-size: 17px
   font-weight: 400
   text-decoration: none
   padding: 9px 110px 9px
-  position: absolute
-  top: 433px
-  left: 605px
+  -webkit-backdrop-filter: blur(6px)
+  backdrop-filter: blur(6px)
+  transition: 0.3s
+  &:hover
+    transition: 0.3s
+    background-color: #2e304787
 
+#projectsDisplayer
+  position: absolute
+  display: flex
+  margin: 435px 0px 0px 23%
 /* -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
 /* ----Font styles---- */
 /*    Tittle Text      */
@@ -197,6 +209,8 @@
   &:hover
     color: #db6262
     text-decoration: underline
+    text-decoration-color: #4f2424
+    text-decoration-thickness: 2.5px
 
 /* -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
 /* -------Icons------- */
