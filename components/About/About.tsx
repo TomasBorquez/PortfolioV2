@@ -1,5 +1,5 @@
 // React stuff
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 // Three stuff
@@ -15,8 +15,20 @@ import s from './About.module.sass';
 
 function About() {
   const mountRef = useRef(null);
-
+  
   useEffect(() => {
+    let roll: boolean = true
+    document.addEventListener('mousedown', e => handleMouse(e, true));
+    document.addEventListener('mouseup', e => handleMouse(e, false));
+    const handleMouse = (e: any, mouseState: boolean) => {
+      if (
+        mountRef.current &&
+        mouseState &&
+        // @ts-ignore
+        mountRef.current.contains(e.target)
+        ) roll = false;
+      else roll = true;
+    };
     const currentMount: any = mountRef.current;
     // Scene
     const scene = new THREE.Scene();
@@ -60,9 +72,9 @@ function About() {
         if ((n as THREE.Mesh).isMesh) {
           n.castShadow = true;
           n.receiveShadow = true;
-          //@ts-ignore
+          // @ts-ignore
           if ((n as THREE.Mesh).material.map)
-          //@ts-ignore
+            //@ts-ignore
             (n as THREE.Mesh).material.map.anisotropy = 16;
         }
       });
@@ -91,7 +103,7 @@ function About() {
         camera.position.y + 10,
         camera.position.z + 10
       );
-      adder.rotation.y += 0.002;
+      if (roll) adder.rotation.y += 0.002;
       requestAnimationFrame(animate);
     };
     animate();
@@ -100,6 +112,7 @@ function About() {
     return () => {
       currentMount.removeChild(renderer.domElement);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -174,12 +187,11 @@ function About() {
         </div>
         {/* Canvas */}
         <div className={s.container} ref={mountRef}>
-        <Link href="/works">
-          <div id={s.projectsDisplayer}>
-            <a id={s.myProjects}>My Projects</a>
-          </div>
-        </Link>
-
+          <Link href="/works">
+            <div id={s.projectsDisplayer}>
+              <a id={s.myProjects}>My Projects</a>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
