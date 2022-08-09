@@ -1,11 +1,12 @@
 // React stuff
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 // Three stuff
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 // Icons & Images
 import DoggoIcon from '../../assets/img/1648855219888.jpg';
 import CloudDownload from '../../assets/img/icons8-download-from-cloud-50.svg';
@@ -14,40 +15,39 @@ import LinkedinIcon from '../../assets/img/icons8-linkedin.svg';
 import s from './About.module.sass';
 
 function About() {
-  const mountRef = useRef(null);
-  
+  const mountRef = useRef<HTMLHeadingElement>(null);
+
   useEffect(() => {
-    let roll: boolean = true
-    document.addEventListener('mousedown', e => handleMouse(e, true));
-    document.addEventListener('mouseup', e => handleMouse(e, false));
-    const handleMouse = (e: any, mouseState: boolean) => {
+    let roll: boolean = true;
+    document.addEventListener('mousedown', (e) => handleMouse(e, true));
+    document.addEventListener('mouseup', (e) => handleMouse(e, false));
+    const handleMouse = (e: MouseEvent, mouseState: boolean) => {
+      const target = e.target as Node
       if (
         mountRef.current &&
-        mouseState &&
-        // @ts-ignore
-        mountRef.current.contains(e.target)
-        ) roll = false;
+        mouseState && 
+        mountRef.current.contains(target ? target : null)
+      ) roll = false;
       else roll = true;
     };
-    const currentMount: any = mountRef.current;
+    const currentMount = mountRef.current;
     // Scene
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       4,
-      currentMount.clientWidth / currentMount.clientHeight,
+      currentMount ? currentMount.clientWidth / currentMount.clientHeight : undefined,
       0.5,
       1000
     );
     camera.position.set(60, 20, 20);
     scene.add(camera);
-
     // Renderer
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
       antialias: true,
     });
-    renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
-    currentMount.appendChild(renderer.domElement);
+    renderer.setSize(currentMount ? currentMount?.clientWidth : 0, currentMount ? currentMount.clientHeight : 0);
+    currentMount ? currentMount.appendChild(renderer.domElement) : undefined;
 
     // Shadows
     renderer.toneMapping = THREE.ReinhardToneMapping;
@@ -56,8 +56,8 @@ function About() {
 
     // Controls
     const controls = new OrbitControls(camera, renderer.domElement);
+    // Controls to move your camera
     controls.enableDamping = true;
-    // move camera ^^
 
     // Our model
     const model = new URL(
@@ -94,6 +94,42 @@ function About() {
     spotLight.shadow.mapSize.height = 1024 * 4;
     scene.add(spotLight);
 
+    // Loading
+    const manager = new THREE.LoadingManager();
+    manager.onStart = function (url, itemsLoaded, itemsTotal) {
+      console.log(
+        'Started loading file: ' +
+          url +
+          '.\nLoaded ' +
+          itemsLoaded +
+          ' of ' +
+          itemsTotal +
+          ' files.'
+      );
+    };
+
+    manager.onLoad = function () {
+      console.log('Loading complete!');
+    };
+
+    manager.onProgress = function (url, itemsLoaded, itemsTotal) {
+      console.log(
+        'Loading file: ' +
+          url +
+          '.\nLoaded ' +
+          itemsLoaded +
+          ' of ' +
+          itemsTotal +
+          ' files.'
+      );
+    };
+
+    manager.onError = function (url) {
+      console.log('There was an error loading ' + url);
+    };
+    const loader = new OBJLoader(manager);
+    loader.load('../../assets/models/puppermodel.glb', () => {});
+
     // Scene render
     const animate = () => {
       controls.update();
@@ -104,15 +140,16 @@ function About() {
         camera.position.z + 10
       );
       if (roll) adder.rotation.y += 0.002;
+      // else if (!roll) adder.rotation.x += 100;
       requestAnimationFrame(animate);
     };
     animate();
 
     // Scene cleanup
     return () => {
-      currentMount.removeChild(renderer.domElement);
+      currentMount ? currentMount.removeChild(renderer.domElement) : undefined;
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -135,7 +172,7 @@ function About() {
           <div id={s.Position}>Full stack Developer</div>
           <div id={s.Bio}>
             <div id={s.BioTittle}>
-              Bio<span className={s.red}>.</span>
+              Bio
             </div>
             <div id={s.BioText}>
               {`Hi, my name is Tomas, I'm from argentina and I'm an aspiring software Developer looking for my first working experience on the software develpoment industry, I'm currently studying software web develpoment at a bootcamp called Henry.`}
