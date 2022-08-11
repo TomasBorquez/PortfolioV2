@@ -15,7 +15,8 @@ export const userSlice = createSlice({
     setTheme: (
       state: Draft<typeof initialState>,
       action: PayloadAction<typeof initialState.theme>
-    ) => {
+      ) => {
+      console.log(action.payload);
       state.theme = action.payload;
     },
   },
