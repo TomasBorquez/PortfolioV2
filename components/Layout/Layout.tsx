@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Nav from '../Nav/Nav';
 import s from './Layout.module.sass'
 import { useSelector } from '../../store/store';
-import { getUserState } from '../../store/slices/UserSlice';
+import { getUserState } from '../../store/slices/userSlice';
 
 type Props = {
   title: string

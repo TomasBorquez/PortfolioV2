@@ -5,7 +5,7 @@ import EnterLogo from '../../assets/img/arrowhite.svg';
 import LightBulb from '../../assets/img/icons8-bombilla-globo-50.svg';
 import GitHubIcon from '../../assets/img/GitHub-Mark-120px-plus.svg';
 import { useDispatch, useSelector  } from '../../store/store';
-import { getUserState, setTheme } from '../../store/slices/UserSlice';
+import { getUserState, setTheme } from '../../store/slices/userSlice';
 import s from './Nav.module.sass';
 
 function Nav() {

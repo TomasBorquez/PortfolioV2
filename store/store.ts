@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import userSlice from './slices/UserSlice';
+import userSlice from './slices/userSlice';
 import {
   useDispatch as useDispatchBase,
   useSelector as useSelectorBase,
