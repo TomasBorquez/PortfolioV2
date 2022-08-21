@@ -6,7 +6,7 @@ import Link from 'next/link';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 // Icons & Images
 import DoggoIcon from '../../assets/img/1648855219888.jpg';
 import CloudDownload from '../../assets/img/icons8-download-from-cloud-50.svg';
@@ -19,15 +19,16 @@ function About() {
 
   useEffect(() => {
     let roll: boolean = true;
-    document.addEventListener('mousedown', (e) => handleMouse(e, true));
-    document.addEventListener('mouseup', (e) => handleMouse(e, false));
+    document.addEventListener('mousedown', e => handleMouse(e, true));
+    document.addEventListener('mouseup', e => handleMouse(e, false));
     const handleMouse = (e: MouseEvent, mouseState: boolean) => {
-      const target = e.target as Node
+      const target = e.target as Node;
       if (
         mountRef.current &&
-        mouseState && 
+        mouseState &&
         mountRef.current.contains(target ? target : null)
-      ) roll = false;
+      )
+        roll = false;
       else roll = true;
     };
     const currentMount = mountRef.current;
@@ -35,7 +36,9 @@ function About() {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       4,
-      currentMount ? currentMount.clientWidth / currentMount.clientHeight : undefined,
+      currentMount
+        ? currentMount.clientWidth / currentMount.clientHeight
+        : undefined,
       0.5,
       1000
     );
@@ -46,7 +49,10 @@ function About() {
       alpha: true,
       antialias: true,
     });
-    renderer.setSize(currentMount ? currentMount?.clientWidth : 0, currentMount ? currentMount.clientHeight : 0);
+    renderer.setSize(
+      currentMount ? currentMount?.clientWidth : 0,
+      currentMount ? currentMount.clientHeight : 0
+    );
     currentMount ? currentMount.appendChild(renderer.domElement) : undefined;
 
     // Shadows
@@ -157,70 +163,72 @@ function About() {
       <div id={s.AboutBox}>
         {/* Info about me part */}
         <div className={s.info}>
-          <div id={s.TittleText}>
-            Tomas Alfonso Borquez<span className={s.red}>.</span>
-          </div>
-          <div id={s.DoggoIcon}>
-            <Image
-              src={DoggoIcon}
-              id="jsxStyle"
-              alt="doggo"
-              layout="fill"
-              objectFit="cover"
-            ></Image>
-          </div>
-          <div id={s.Position}>Full stack Developer</div>
-          <div id={s.Bio}>
-            <div id={s.BioTittle}>
-              Bio
-            </div>
-            <div id={s.BioText}>
-              {`Hi, my name is Tomas, I'm from argentina and I'm an aspiring software Developer looking for my first working experience on the software develpoment industry, I'm currently studying software web develpoment at a bootcamp called Henry.`}
-              <br></br>
-              {`I love developing innovative and creative projects, always looking for a new challenges and new stuff to learn since I'm in love with what I do, and I do feel excited and passionate about all the techologies available to learn and soon to be released, that's why I'm constantly expanding my knowledge and looking on all sorts of ways on how to improve. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`}
-            </div>
-          </div>
-          <div id={s.WebCertificate}>
-            Certificate in{' '}
-            <a id={s.WebDevelopment} href="https://github.com/TomasBorquez">
-              Web development
-            </a>
-          </div>
-          {/* CV Button */}
-          <a href="https://github.com/TomasBorquez" id={s.ButtonCV}>
-            Download CV
-            <div id={s.svgCV}>
+          <div id={s.bioContainer}>
+            <div id={s.DoggoIcon}>
               <Image
-                className={s.icon}
+                src={DoggoIcon}
+                id="jsxStyle"
+                alt="doggo"
+                layout="fill"
+                objectFit="cover"
+              ></Image>
+            </div>
+            <div id={s.TittleText}>
+              Tomas Alfonso Borquez<span className={s.red}>.</span>
+            </div>
+            <div id={s.Position}>Full stack Developer</div>
+            <div id={s.Bio}>
+              <div id={s.BioTittle}>Bio</div>
+              <div id={s.BioText}>
+                {`Hi, my name is Tomas, I'm from argentina and I'm an aspiring software Developer looking for my first working experience on the software develpoment industry, I'm currently studying software web develpoment at a bootcamp called Henry.`}
+                <br></br>
+                {`I love developing innovative and creative projects, always looking for a new challenges and new stuff to learn since I'm in love with what I do, and I do feel excited and passionate about all the techologies available to learn and soon to be released, that's why I'm constantly expanding my knowledge and looking on all sorts of ways on how to improve. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`}
+              </div>
+            </div>
+            <div id={s.WebCertificate}>
+              Certificate in{' '}
+              <a id={s.WebDevelopment} href="https://github.com/TomasBorquez">
+                Web development
+              </a>
+            </div>
+            <div id={s.buttonsContainer}>
+              {/* CV Button */}
+              <a href="https://github.com/TomasBorquez" id={s.ButtonCV}>
+                Download CV
+                <div id={s.svgCV}>
+                  <Image
+                    className={s.icon}
+                    width="23px"
+                    height="23px"
+                    src={CloudDownload}
+                    alt="cloud icon"
+                  />
+                </div>
+              </a>
+            </div>
+
+            {/* GitHub Button */}
+            <a href="https://github.com/TomasBorquez" id={s.ButtonG}>
+              <Image
+                id={s.svgG}
                 width="23px"
                 height="23px"
-                src={CloudDownload}
-                alt="cloud icon"
+                src={GitHubIcon}
+                alt="github icon"
               />
-            </div>
-          </a>
+            </a>
 
-          {/* GitHub Button */}
-          <a href="https://github.com/TomasBorquez" id={s.ButtonG}>
-            <Image
-              id={s.svgG}
-              width="23px"
-              height="23px"
-              src={GitHubIcon}
-              alt="github icon"
-            />
-          </a>
-
-          {/* Linkedin Button */}
-          <a href="https://www.linkedin.com/in/tomasborquez/" id={s.ButtonL}>
-            <Image
-              id={s.svgL}
-              width="23px"
-              height="23px"
-              src={LinkedinIcon}
-              alt="linkedin icon"
-            />
-          </a>
+            {/* Linkedin Button */}
+            <a href="https://www.linkedin.com/in/tomasborquez/" id={s.ButtonL}>
+              <Image
+                id={s.svgL}
+                width="23px"
+                height="23px"
+                src={LinkedinIcon}
+                alt="linkedin icon"
+              />
+            </a>
+          </div>
         </div>
         {/* Canvas */}
         <div className={s.container} ref={mountRef}>
