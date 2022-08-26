@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap')
+
+.skillsTitle
+  display: grid
+  place-content: center
+  font-family: 'M PLUS 1', sans-serif
+  background: linear-gradient(160.43deg,#1d1d1d -85.91%,#222222 147.11%)
+  margin-top: 1em
+  padding: 0.5em
+  border-radius: 14px
+  font-weight: 400
+
+  p
+    margin: 0
+    display: inline-block
+
+  .frontend
+    border-bottom: 2px solid #db6262
+
+  .backend
+    border-bottom: 2px solid #3dabc3
+
+  .tests
+    border-bottom: 2px solid #603dc3
+
+.skillsTitle#nextTitle
+  margin-top: 2em
+
+.red
+  color: #db6262
+
+.font
+  font-family: 'Roboto', sans-serif
+  font-size: 15px
+  font-weight: 600
+
+.cardsWrapper
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+
+  @media only screen and (max-width: 768px)
+    grid-template-columns: repeat(3, 1fr)
+    gap: 0.5em
+
+.wrapper
+  display: grid
+  place-content: center
+
+  @media (max-width: 500px)
+    svg
+      transform: scale(0.65)
+
+.skillSectionTitle
+  font-family: 'M PLUS 1', sans-serif
+  font-size: 20px
+
+.skillsWrapper
+  margin-top: 1em
+  border-radius: 14px
+  width: 115px
+  height: 112px
+  background: linear-gradient(238.63deg, #1d1d1d -50.7%, #222222 93.51%)
+
+  @media (max-width: 500px)
+    width: 80px
+    height: 77px
+
+  .skillsBody
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+
+  .skillBox
+    position: relative
+    height: 100%
+    width: 100%
+    display: grid
+    place-content: center
+    transform: scale(0.9)
+
+    @media (max-width: 500px)
+      overflow: hidden
+
+  .skillName
+    font-family: "Creato Display"
+    font-size: 14px
+    background: #00000098
+    border-radius: 0 0 14px 14px
+    display: grid
+    padding: 0.3em
+    place-content: center
+    font-weight: bold
+    p
+      margin: 0
+
+    @media (max-width: 500px)
+      font-size: 10px
+

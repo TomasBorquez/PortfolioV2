@@ -12,6 +12,7 @@ import DoggoIcon from '../../assets/img/1648855219888.jpg';
 import CloudDownload from '../../assets/img/icons8-download-from-cloud-50.svg';
 import GitHubIcon from '../../assets/img/GitHub-Mark-120px-plus.svg';
 import LinkedinIcon from '../../assets/img/icons8-linkedin.svg';
+import Online from '../../assets/img/2423669-8bc34a.svg';
 import s from './About.module.sass';
 
 function About() {
@@ -179,21 +180,45 @@ function About() {
             <div id={s.Position}>Full stack Developer</div>
             <div id={s.Bio}>
               <div id={s.BioTittle}>Bio</div>
+              <div id={s.currently}>
+                <p>
+                  <div>
+                    <Image
+                      src={Online}
+                      alt=""
+                      width="10px"
+                      height="10px"
+                    />
+                  </div>
+                  {`Currently I'm perfecting my skills on `}{' '}
+                  <a className={s.typeScript} href="">{` TypeScript `}</a>{' '}
+                  {`a personal project.`}
+                </p>
+              </div>
               <div id={s.BioText}>
-                {`Hi, my name is Tomas, I'm from argentina and I'm an aspiring software Developer looking for my first working experience on the software develpoment industry, I'm currently studying software web develpoment at a bootcamp called Henry.`}
-                <br></br>
-                {`I love developing innovative and creative projects, always looking for a new challenges and new stuff to learn since I'm in love with what I do, and I do feel excited and passionate about all the techologies available to learn and soon to be released, that's why I'm constantly expanding my knowledge and looking on all sorts of ways on how to improve. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`}
+                <p>{`Hi, my name is Tomas, I'm from argentina and I'm an aspiring software Developer looking for my first working experience on the software develpoment industry, I'm currently studying software web develpoment at a bootcamp called Henry.`}</p>
+                <p>{`I love developing innovative and creative projects, always looking for a new challenges and new stuff to learn since I'm in love with what I do, and I do feel excited and passionate about all the techologies available to learn and soon to be released, that's why I'm constantly expanding my knowledge and looking on all sorts of ways on how to improve.`}</p>
               </div>
             </div>
             <div id={s.WebCertificate}>
               Certificate in{' '}
-              <a id={s.WebDevelopment} href="https://github.com/TomasBorquez">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://certificates.soyhenry.com/cert?id=d54aa271-be93-494d-bb84-558fa02a2464"
+                id={s.WebDevelopment}
+              >
                 Web development
               </a>
             </div>
             <div id={s.buttonsContainer}>
               {/* CV Button */}
-              <a href="https://github.com/TomasBorquez" id={s.ButtonCV}>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://drive.google.com/file/d/1zXJTDN8RG6I5d-h_CA0wx8dllEniKqx1/view?usp=sharing"
+                id={s.ButtonCV}
+              >
                 Download CV
                 <div id={s.svgCV}>
                   <Image
@@ -208,7 +233,12 @@ function About() {
             </div>
 
             {/* GitHub Button */}
-            <a href="https://github.com/TomasBorquez" id={s.ButtonG}>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/TomasBorquez"
+              id={s.ButtonG}
+            >
               <Image
                 id={s.svgG}
                 width="23px"
@@ -219,7 +249,12 @@ function About() {
             </a>
 
             {/* Linkedin Button */}
-            <a href="https://www.linkedin.com/in/tomasborquez/" id={s.ButtonL}>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.linkedin.com/in/tomasborquez/"
+              id={s.ButtonL}
+            >
               <Image
                 id={s.svgL}
                 width="23px"

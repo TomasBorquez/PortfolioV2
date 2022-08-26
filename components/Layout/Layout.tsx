@@ -7,7 +7,7 @@ import { getUserState } from '../../store/slices/userSlice';
 // hello
 type Props = {
   title: string
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 export const Layout = ({ children, title }: Props) => {

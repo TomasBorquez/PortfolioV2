@@ -4,7 +4,7 @@ import Link from 'next/link';
 import EnterLogo from '../../assets/img/arrowhite.svg';
 import LightBulb from '../../assets/img/icons8-bombilla-globo-50.svg';
 import GitHubIcon from '../../assets/img/GitHub-Mark-120px-plus.svg';
-import { useDispatch, useSelector  } from '../../store/store';
+import { useDispatch, useSelector } from '../../store/store';
 import { getUserState, setTheme } from '../../store/slices/userSlice';
 import s from './Nav.module.sass';
 
@@ -12,14 +12,20 @@ function Nav() {
   const dispatch = useDispatch();
   const { theme } = useSelector(getUserState);
   const handleOnClick = () => {
-    if (theme === 'dark') dispatch(setTheme('light'))
-    else dispatch(setTheme('dark'))
-  }
+    if (theme === 'dark') dispatch(setTheme('light'));
+    else dispatch(setTheme('dark'));
+  };
   return (
     <div className={s.centered}>
       <div className={s.leftie}>
         <div id={s.homeTitle}>
-          <Image src={EnterLogo} className="iconM" alt="icono" width="20px" height="20px" />
+          <Image
+            src={EnterLogo}
+            className="iconM"
+            alt="icono"
+            width="20px"
+            height="20px"
+          />
           <Link href="/">
             <a id={s.home} className={s.links}>
               Tomas Borquez
@@ -42,6 +48,8 @@ function Nav() {
           <a
             id={s.source}
             className={s.links}
+            target="_blank"
+            rel="noreferrer"
             href="https://github.com/TomasBorquez/PortfolioV2"
           >
             Source
