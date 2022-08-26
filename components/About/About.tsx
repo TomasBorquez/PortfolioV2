@@ -181,22 +181,22 @@ function About() {
             <div id={s.Bio}>
               <div id={s.BioTittle}>Bio</div>
               <div id={s.currently}>
+                <div id={s.onlineContainer}>
+                  <Image src={Online} alt="" width="10px" height="10px" />
+                </div>
                 <p>
-                  <div>
-                    <Image
-                      src={Online}
-                      alt=""
-                      width="10px"
-                      height="10px"
-                    />
-                  </div>
                   {`Currently I'm perfecting my skills on `}{' '}
-                  <a className={s.typeScript} href="">{` TypeScript `}</a>{' '}
+                  <a
+                    className={s.typeScript}
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.typescriptlang.org/"
+                  >{` TypeScript `}</a>{' '}
                   {`a personal project.`}
                 </p>
               </div>
               <div id={s.BioText}>
-                <p>{`Hi, my name is Tomas, I'm from argentina and I'm an aspiring software Developer looking for my first working experience on the software develpoment industry, I'm currently studying software web develpoment at a bootcamp called Henry.`}</p>
+                <p>{`Hi, my name is Tomas, I'm from argentina and I'm a Full Stack Web Developer altough I specialize in Front-end for the most part, I'm currently studying software web develpoment at a bootcamp called Henry.`}</p>
                 <p>{`I love developing innovative and creative projects, always looking for a new challenges and new stuff to learn since I'm in love with what I do, and I do feel excited and passionate about all the techologies available to learn and soon to be released, that's why I'm constantly expanding my knowledge and looking on all sorts of ways on how to improve.`}</p>
               </div>
             </div>
