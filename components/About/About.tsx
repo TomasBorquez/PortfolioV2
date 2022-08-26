@@ -1,4 +1,5 @@
 // React stuff
+import { useState } from 'react';
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,6 +9,8 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 // Icons & Images
+import { IoMdPause } from 'react-icons/io';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 import DoggoIcon from '../../assets/img/1648855219888.jpg';
 import CloudDownload from '../../assets/img/icons8-download-from-cloud-50.svg';
 import GitHubIcon from '../../assets/img/GitHub-Mark-120px-plus.svg';
@@ -17,9 +20,11 @@ import s from './About.module.sass';
 
 function About() {
   const mountRef = useRef<HTMLHeadingElement>(null);
+  const pauseRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    let roll: boolean = true;
+    let roll: boolean = true,
+      pause: boolean = false;
     document.addEventListener('mousedown', e => handleMouse(e, true));
     document.addEventListener('mouseup', e => handleMouse(e, false));
     const handleMouse = (e: MouseEvent, mouseState: boolean) => {
@@ -31,6 +36,13 @@ function About() {
       )
         roll = false;
       else roll = true;
+      if (
+        pauseRef.current &&
+        mouseState &&
+        pauseRef.current.contains(target ? target : null)
+      )
+        pause = !pause;
+      console.log(pause);
     };
     const currentMount = mountRef.current;
     // Scene
@@ -146,7 +158,7 @@ function About() {
         camera.position.y + 10,
         camera.position.z + 10
       );
-      if (roll) adder.rotation.y += 0.002;
+      if (roll && !pause) adder.rotation.y += 0.002;
       // else if (!roll) adder.rotation.x += 100;
       requestAnimationFrame(animate);
     };
@@ -179,7 +191,6 @@ function About() {
             </div>
             <div id={s.Position}>Full stack Developer</div>
             <div id={s.Bio}>
-              <div id={s.BioTittle}>Bio</div>
               <div id={s.currently}>
                 <div id={s.onlineContainer}>
                   <Image src={Online} alt="" width="10px" height="10px" />
@@ -195,6 +206,7 @@ function About() {
                   {`a personal project.`}
                 </p>
               </div>
+              <div id={s.BioTittle}>Bio</div>
               <div id={s.BioText}>
                 <p>{`Hi, my name is Tomas, I'm from argentina and I'm a Full Stack Web Developer altough I specialize in Front-end for the most part, I'm currently studying software web develpoment at a bootcamp called Henry.`}</p>
                 <p>{`I love developing innovative and creative projects, always looking for a new challenges and new stuff to learn since I'm in love with what I do, and I do feel excited and passionate about all the techologies available to learn and soon to be released, that's why I'm constantly expanding my knowledge and looking on all sorts of ways on how to improve.`}</p>
@@ -272,6 +284,14 @@ function About() {
               <a id={s.myProjects}>My Projects</a>
             </div>
           </Link>
+          <div id={s.topRight}>
+            <div className={s.sButton} ref={pauseRef}>
+              <IoMdPause />
+            </div>
+            <button className={s.sButton}>
+              <AiOutlineInfoCircle />
+            </button>
+          </div>
         </div>
       </div>
     </div>

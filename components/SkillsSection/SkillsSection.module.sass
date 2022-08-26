@@ -4,11 +4,12 @@
   display: grid
   place-content: center
   font-family: 'M PLUS 1', sans-serif
-  background: linear-gradient(160.43deg,#1d1d1d -85.91%,#222222 147.11%)
+  background: var(--linearGradient)
   margin-top: 1em
   padding: 0.5em
   border-radius: 14px
-  font-weight: 400
+  font-weight: 700
+  color: var(--fontColor)
 
   p
     margin: 0
@@ -32,7 +33,8 @@
 .font
   font-family: 'Roboto', sans-serif
   font-size: 15px
-  font-weight: 600
+  font-weight: 500
+  color: var(--fontColor)
 
 .cardsWrapper
   display: grid
@@ -53,13 +55,14 @@
 .skillSectionTitle
   font-family: 'M PLUS 1', sans-serif
   font-size: 20px
+  color: var(--fontColor)
 
 .skillsWrapper
   margin-top: 1em
   border-radius: 14px
   width: 115px
   height: 112px
-  background: linear-gradient(238.63deg, #1d1d1d -50.7%, #222222 93.51%)
+  background: var(--linearGradient)
 
   @media (max-width: 500px)
     width: 80px
@@ -85,7 +88,7 @@
   .skillName
     font-family: "Creato Display"
     font-size: 14px
-    background: #00000098
+    background: var(--hardTone)
     border-radius: 0 0 14px 14px
     display: grid
     padding: 0.3em
