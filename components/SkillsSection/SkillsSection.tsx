@@ -4,18 +4,22 @@ import BluredContainer from '../Layout/BluredContainer';
 import SkillCard from './resources/SkillCard';
 import Image from 'next/image';
 // Images
-import ReactSVG from '../../assets/img/skills/React.svg';
-import NextSVG from '../../assets/img/skills/Next.svg';
-import Redux from '../../assets/img/skills/Redux.svg';
-import Typescript from '../../assets/img/skills/Typescript.svg';
-import Node from '../../assets/img/skills/Node.svg';
-import Mongo from '../../assets/img/skills/Mongo.svg';
-import Express from '../../assets/img/skills/Express.svg';
-import GraphQL from '../../assets/img/skills/Graph.svg';
-import Jest from '../../assets/img/skills/Jest.svg';
-import Cypress from '../../assets/img/skills/Cypress.svg';
-import Testing from '../../assets/img/skills/Testing.svg';
-import SQL from '../../assets/img/skills/SQL.svg';
+import ReactSVG from '../../assets/img/skills/react.svg';
+import NextSVG from '../../assets/img/skills/nextjs.svg';
+import HTML from '../../assets/img/skills/html.svg';
+import CSS from '../../assets/img/skills/css.svg';
+import SASS from '../../assets/img/skills/sass.svg';
+import Redux from '../../assets/img/skills/redux.svg';
+import TypeScript from '../../assets/img/skills/typescript.svg';
+import JavaScript from '../../assets/img/skills/javascript.svg';
+import Node from '../../assets/img/skills/nodejs.svg';
+import Express from '../../assets/img/skills/expressjs.svg';
+import Sequilize from '../../assets/img/skills/sequilize.svg';
+import Jest from '../../assets/img/skills/jest.svg';
+import PostSQL from '../../assets/img/skills/postsql.svg'
+import GitHub from '../../assets/img/skills/github.svg'
+import Photoshop from '../../assets/img/skills/photoshop.svg'
+import ThreeJS from '../../assets/img/skills/threejs.svg'
 
 const SkillsSection = () => {
   return (
@@ -28,17 +32,45 @@ const SkillsSection = () => {
           <p className={s.frontend}>Front-end</p>
         </div>
         <div className={s.cardsWrapper}>
-          <SkillCard s={s} skill={'React'}>
-            <Image src={ReactSVG} alt="" />
+          <SkillCard s={s} skill={'HTML'}>
+            <div className={s.longaniza}>
+              <Image src={HTML} alt="" />
+            </div>
           </SkillCard>
-          <SkillCard s={s} skill={'Next'}>
-            <Image src={NextSVG} alt="" />
+          <SkillCard s={s} skill={'CSS'}>
+            <div className={s.longaniza}>
+              <Image src={CSS} alt="" />
+            </div>
+          </SkillCard>
+          <SkillCard s={s} skill={'SASS'}>
+            <div className={s.longaniza}>
+              <Image src={SASS} alt="" />
+            </div>
+          </SkillCard>
+          <SkillCard s={s} skill={'JavaScript'}>
+            <div className={s.longaniza}>
+              <Image src={JavaScript} alt="" />
+            </div>
+          </SkillCard>
+          <SkillCard s={s} skill={'TypeScript'}>
+            <div className={s.longaniza}>
+              <Image src={TypeScript} alt="" />
+            </div>
+          </SkillCard>
+          <SkillCard s={s} skill={'ReactJS'}>
+            <div className={s.longaniza}>
+              <Image src={ReactSVG} alt="" />
+            </div>
+          </SkillCard>
+          <SkillCard s={s} skill={'NextJS'}>
+            <div className={s.longaniza}>
+              <Image src={NextSVG} alt="" />
+            </div>
           </SkillCard>
           <SkillCard s={s} skill={'Redux'}>
-            <Image src={Redux} alt="" />
-          </SkillCard>
-          <SkillCard s={s} skill={'Typescript'}>
-            <Image src={Typescript} alt="" />
+            <div className={s.longaniza}>
+              <Image src={Redux} alt="" />
+            </div>
           </SkillCard>
         </div>
       </div>
@@ -49,13 +81,24 @@ const SkillsSection = () => {
         </div>
         <div className={s.cardsWrapper}>
           <SkillCard s={s} skill={'NodeJs'}>
-            <Image src={Node} alt="" />
+            <div className={s.longaniza}>
+              <Image src={Node} alt="" />
+            </div>
           </SkillCard>
           <SkillCard s={s} skill={'ExpressJs'}>
-            <Image src={Express} alt="" />
+            <div className={s.longaniza}>
+              <Image src={Express} alt="" />
+            </div>
+          </SkillCard>
+          <SkillCard s={s} skill={'Sequilize'}>
+            <div className={s.longaniza}>
+              <Image src={Sequilize} alt="" />
+            </div>
           </SkillCard>
           <SkillCard s={s} skill={'PostgreSQL'}>
-            <Image src={SQL} alt="" />
+            <div className={s.longaniza}>
+              <Image src={PostSQL} alt="" />
+            </div>
           </SkillCard>
         </div>
       </div>
@@ -66,7 +109,24 @@ const SkillsSection = () => {
         </div>
         <div className={s.cardsWrapper}>
           <SkillCard s={s} skill={'Jest'}>
-            <Image src={Jest} alt="" />
+            <div className={s.longaniza}>
+              <Image src={Jest} alt="" />
+            </div>
+          </SkillCard>
+          <SkillCard s={s} skill={'GitHub'}>
+            <div className={s.longaniza}>
+              <Image src={GitHub} alt="" />
+            </div>
+          </SkillCard>
+          <SkillCard s={s} skill={'ThreeJS'}>
+            <div className={s.longaniza}>
+              <Image src={ThreeJS} alt="" />
+            </div>
+          </SkillCard>
+          <SkillCard s={s} skill={'Photoshop'}>
+            <div className={s.longaniza}>
+              <Image src={Photoshop} alt="" />
+            </div>
           </SkillCard>
         </div>
       </div>

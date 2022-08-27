@@ -92,22 +92,88 @@
     transition: 0.1s
     background: rgba(40, 43, 66, 0.529)
 
-#currently
-  position: absolute
-  display: flex
-  top: -31px
-  left: 8px
-  width: 500px
-  margin-left: 15px
-  & p
-    color: var(--fontColor)
-    font-weight: 500
-
 #onlineContainer
   position: absolute
-  left: -15px
-  bottom: 1px
-  
+  top: 125px
+  left: 102px
+  outline: 7px solid #2b2d43
+  border-radius: 100%
+  width: 17px
+  height: 17px
+  z-index: 100
+  & #statusContainer
+    animation: close 0.5s forwards
+  &:hover
+    & #statusContainer
+      animation: open 0.5s forwards
+
+#dot
+  position: absolute
+  background: linear-gradient(-30deg, #73df55, #81e366, #a9de9c, #8fe178, #7de261)
+  background-size: 400% 400%
+  animation: glow 1s infinite alternate
+  border-radius: 100%
+  width: 17px
+  height: 17px
+  z-index: 100
+
+#loong
+  position: absolute
+  top: -7px
+  left: -7px
+  width: 400px
+  height: 40px
+  z-index: -2
+  & #statusContainer
+    animation: close 0.5s forwards
+  &:hover
+    & #statusContainer
+      animation: open 0.5s forwards
+
+#statusContainer
+  display: flex
+  position: absolute
+  top: 4px
+  left: 12px
+  background: #2b2d43
+  width: 330px
+  height: 23px
+  align-items: center
+  justify-content: center
+  border-top-right-radius: 5px
+  border-bottom-right-radius: 5px
+  transform: translateZ(-20px)
+  overflow: hidden
+  text-overflow: clip
+  white-space: nowrap
+  z-index: -1
+  & p
+    font-size: 15px
+    color: var(--fontColor)
+    font-weight: 400
+
+@keyframes glow
+  0%
+    background-position: 0% 50%
+
+  100%
+    background-position: 100% 50%
+
+@-webkit-keyframes open
+  0% 
+    width: 0px
+
+  100% 
+    width: 330px
+
+@-webkit-keyframes close
+  0% 
+    padding-left: 0px
+    width: 330px
+
+  100% 
+    width: 0px
+
 #centerMe
   display: flex
   justify-content: center
@@ -135,7 +201,7 @@
   text-decoration: none
   padding: 8px 8px
   position: absolute
-  bottom: 26px
+  bottom: 40px
   transition: 0.3s
   &:hover
     background-color: #1a2060
@@ -164,7 +230,7 @@
   outline: none
   padding: 4px
   position: absolute
-  bottom: 30px
+  bottom: 45px
   left: 150px
   transition: 0.1s
   &:hover
@@ -193,7 +259,7 @@
   outline: none
   padding: 4px
   position: absolute
-  bottom: 30px
+  bottom: 45px
   left: 185px
   transition: 0.1s
   &:hover
@@ -237,7 +303,7 @@
   color: var(--fontColor)
   position: absolute
   top: 48px
-  left: 122px
+  left: 137px
   font-size: 33.2px
   font-weight: 600
 
@@ -252,7 +318,7 @@
   // position: relative
   position: absolute
   top: 88px
-  left: 127px
+  left: 142px
   text-decoration: underline
   text-underline-offset: 6px
   text-decoration-thickness: 4px
@@ -267,7 +333,7 @@
   color: var(--fontColor)
   position: relative
   margin-left: 8px
-  bottom: 7px
+  bottom: 35px
   text-decoration: underline
   text-underline-offset: 6px
   text-decoration-thickness: 4px
@@ -280,7 +346,7 @@
   font-weight: 300
   position: relative
   margin-left: 8px
-  margin-top: 50px
+  margin-top: 21px
   bottom: 47px
   width: 480px
   margin-right: 6px
@@ -318,10 +384,10 @@
 
 #DoggoIcon
   position: relative
-  width: 100px
+  width: 120px
+  height: 120px
   overflow: hidden
-  height: 100px
-  border-radius: 50px
-  margin-left: 5px
+  border-radius: 100px
+  margin-left: 0px
 
 /* -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */

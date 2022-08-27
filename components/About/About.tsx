@@ -171,7 +171,6 @@ function About() {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
 
   return (
     <div id={s.centerMe}>
@@ -179,35 +178,38 @@ function About() {
         {/* Info about me part */}
         <div className={s.info}>
           <div id={s.bioContainer}>
-            <div id={s.DoggoIcon}>
-              <Image
-                src={DoggoIcon}
-                id="jsxStyle"
-                alt="doggo"
-                layout="fill"
-                objectFit="cover"
-              ></Image>
+            <div id={s.iconContainer}>
+              <div id={s.DoggoIcon}>
+                <Image
+                  src={DoggoIcon}
+                  id="jsxStyle"
+                  alt="doggo"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <div id={s.onlineContainer}>
+                <div id={s.dot} />
+                <div id={s.loong}>
+                  <div id={s.statusContainer}>
+                    <p>
+                      {`Currently perfecting my skills on `}{' '}
+                      <a
+                        className={s.typeScript}
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://www.typescriptlang.org/"
+                      >{` TypeScript `}</a>{' '}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div id={s.TittleText}>
               Tomas Alfonso Borquez<span className={s.red}>.</span>
             </div>
             <div id={s.Position}>Full stack Developer</div>
             <div id={s.Bio}>
-              <div id={s.currently}>
-                <div id={s.onlineContainer}>
-                  <Image src={Online} alt="" width="10px" height="10px" />
-                </div>
-                <p>
-                  {`Currently I'm perfecting my skills on `}{' '}
-                  <a
-                    className={s.typeScript}
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.typescriptlang.org/"
-                  >{` TypeScript `}</a>{' '}
-                  {`a personal project.`}
-                </p>
-              </div>
               <div id={s.BioTittle}>Bio</div>
               <div id={s.BioText}>
                 <p>{`Hi, my name is Tomas, I'm from argentina and I'm a Full Stack Web Developer altough I specialize in Front-end for the most part, I'm currently studying software web develpoment at a bootcamp called Henry.`}</p>
@@ -297,7 +299,7 @@ function About() {
               <div className={s.sButton}>
                 <AiOutlineInfoCircle />
               </div>
-              <ProjectInfo visible={infoShow}/>
+              <ProjectInfo visible={infoShow} />
             </div>
           </div>
         </div>

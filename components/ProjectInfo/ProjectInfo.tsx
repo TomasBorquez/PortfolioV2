@@ -41,8 +41,8 @@ const ProjectInfo = ({ visible }: Props) => {
             >
               Threejs
             </a>{' '}
-            and rendered with <span className={s.red}>WebGL</span>.<br></br>
-            <p>
+            and rendered with <span className={s.red}>WebGL</span>.
+            <br />
               Meanwhile the Frontend aka website was made with{' '}
               <a
                 className={s.next}
@@ -71,7 +71,6 @@ const ProjectInfo = ({ visible }: Props) => {
                 SASS
               </a>
               .
-            </p>
           </p>
         </div>
       </div>
