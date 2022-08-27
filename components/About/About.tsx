@@ -16,6 +16,7 @@ import GitHubIcon from '../../assets/img/GitHub-Mark-120px-plus.svg';
 import LinkedinIcon from '../../assets/img/icons8-linkedin.svg';
 import Online from '../../assets/img/2423669-8bc34a.svg';
 import s from './About.module.sass';
+import ProjectInfo from '../ProjectInfo/ProjectInfo';
 
 function About() {
   const mountRef = useRef<HTMLHeadingElement>(null);
@@ -170,77 +171,7 @@ function About() {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const displayInfo = () => {
-    return (
-      <div id={s.infoContainer}>
-        <div id={s.infoTitle}>
-          <p>What technologies were used?</p>
-        </div>
-        <div id={s.infoDescription}>
-          <p>
-            The dog model was made with{' '}
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.blender.org/"
-              className={s.voxel3D}
-            >
-              Voxel3D
-            </a>{' '}
-            and{' '}
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.blender.org/"
-              className={s.blender}
-            >
-              Blender
-            </a>
-            , and it is displayed on the website with{' '}
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://threejs.org/"
-              className={s.threeJS}
-            >
-              Threejs
-            </a>{' '}
-            and rendered with <span className={s.red}>WebGL</span>.<br></br>
-            <p>
-              Meanwhile the Frontend aka website was made with{' '}
-              <a
-                className={s.next}
-                target="_blank"
-                rel="noreferrer"
-                href="https://nextjs.org/"
-              >
-                NextJS
-              </a>
-              ,{' '}
-              <a
-                className={s.typeScript}
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.typescriptlang.org/"
-              >
-                TypeScript
-              </a>{' '}
-              and{' '}
-              <a
-                className={s.sass}
-                target="_blank"
-                rel="noreferrer"
-                href="https://sass-lang.com/"
-              >
-                SASS
-              </a>.
-            </p>
-          </p>
-        </div>
-      </div>
-    );
-  };
+  
 
   return (
     <div id={s.centerMe}>
@@ -366,7 +297,7 @@ function About() {
               <div className={s.sButton}>
                 <AiOutlineInfoCircle />
               </div>
-              {infoShow && displayInfo()}
+              <ProjectInfo visible={infoShow}/>
             </div>
           </div>
         </div>
