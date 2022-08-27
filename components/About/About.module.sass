@@ -96,16 +96,20 @@
   position: absolute
   top: 125px
   left: 102px
-  outline: 7px solid #2b2d43
+  outline: 7px solid var(--primaryColor)
   border-radius: 100%
   width: 17px
   height: 17px
   z-index: 100
   & #statusContainer
-    animation: close 0.5s forwards
+    animation: close 0.3s forwards
+  & #loong
+    animation: close 0.3s forwards
   &:hover
+    & #loong
+      animation: open 0.3s forwards
     & #statusContainer
-      animation: open 0.5s forwards
+      animation: open 0.3s forwards
 
 #dot
   position: absolute
@@ -119,10 +123,10 @@
 
 #loong
   position: absolute
-  top: -7px
+  top: -90px
   left: -7px
   width: 400px
-  height: 40px
+  height: 200px
   z-index: -2
   & #statusContainer
     animation: close 0.5s forwards
@@ -133,9 +137,9 @@
 #statusContainer
   display: flex
   position: absolute
-  top: 4px
+  top: 87px
   left: 12px
-  background: #2b2d43
+  background: var(--primaryColor)
   width: 330px
   height: 23px
   align-items: center
