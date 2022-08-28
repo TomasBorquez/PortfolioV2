@@ -1,0 +1,149 @@
+.red
+  color: #db6262
+
+.projectsSectionTitle
+  font-family: 'M PLUS 1', sans-serif
+  font-size: 20px
+  color: var(--fontColor)
+
+.cardsWrapper
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+
+  @media only screen and (max-width: 950px)
+    grid-template-columns: repeat(1, 1fr)
+    gap: 0.5em
+
+.wrapper
+  display: grid
+  place-content: center
+
+.skillsTitle
+  display: grid
+  place-content: center
+  font-family: 'M PLUS 1', sans-serif
+  background: var(--linearGradient)
+  margin-top: 1em
+  padding: 0.5em
+  border-radius: 14px
+  font-weight: 700
+  color: var(--fontColor)
+
+  p
+    margin: 0
+    display: inline-block
+
+.projectsWrapper
+  margin: 1.5em
+  border-radius: 14px
+  width: 430px
+  background: var(--linearGradient)
+
+.projectsBody
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+
+.hoverContainer
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 200
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  & p
+    font-size: 13.5px
+    font-weight: 500
+    font-family: 'M PLUS 1', sans-serif
+    width: 400px
+    text-align: center
+    margin-bottom: 3px
+    color: var(--fontColor)
+  & a
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 35px
+    height: 35px
+    font-size: 23px
+    color: #0b0b0b
+    background: #db6262
+    border-radius: 100%
+    transition: 0.2s
+  & a:hover
+    background: #632c2c
+    transition: 0.2s
+
+.linksContainer
+  display: flex
+  & a
+    margin-left: 10px
+
+.projectBox
+  position: relative
+  width: 430px
+  height: 208px
+  display: flex
+  margin: 0 auto
+  overflow: hidden
+  border-radius: 15px 15px 0 0
+  transition: 0.2s
+  & .hoverContainer
+    transition: 0.2s
+    display: none
+  &:hover
+    & .hoverContainer
+      transition: 0.2s
+      display: flex
+    & .projectImage
+      transition: 0.2s
+      filter: blur(5px)
+      opacity: 0.3
+
+.dot
+  background-size: 400% 400%
+  animation: glow 1s infinite alternate
+  border-radius: 100%
+  width: 12px
+  height: 12px
+  z-index: 100
+  margin-left: 3px
+
+.status
+  position: absolute
+  color: var(--fontColor)
+  background: var(--tone)
+  font-family: 'M PLUS 1', sans-serif
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100px
+  margin-top: 7px
+  margin-left: 320px
+  border-radius: 5px
+  z-index: 100
+
+.projectName
+  font-family: 'M PLUS 1', sans-serif
+  font-size: 18px
+  letter-spacing: 1px
+  background: var(--hardTone)
+  border-radius: 0 0 14px 14px
+  display: grid
+  padding: 0.3em
+  place-content: center
+  font-weight: bold
+  p
+    color: var(--fontColor)
+    border-bottom: 2px solid #db6262
+    margin: 0
+
+  @media (max-width: 500px)
+    font-size: 10px
+
+.projectsTitle#nextTitle
+  margin-top: 2em

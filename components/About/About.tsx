@@ -212,7 +212,7 @@ function About() {
             <div id={s.Bio}>
               <div id={s.BioTittle}>Bio</div>
               <div id={s.BioText}>
-                <p>{`Hi, my name is Tomas, I'm from argentina and I'm a Full Stack Web Developer altough I specialize in Front-end for the most part, I'm currently studying software web develpoment at a bootcamp called Henry.`}</p>
+                <p>{`Hi, my name is Tomas, I'm from Argentina and I'm a Full Stack Web Developer altough I specialize in Front-end for the most part, I'm currently studying software web develpoment at a bootcamp called Henry.`}</p>
                 <p>{`I love developing innovative and creative projects, always looking for a new challenges and new stuff to learn since I'm in love with what I do, and I do feel excited and passionate about all the techologies available to learn and soon to be released, that's why I'm constantly expanding my knowledge and looking on all sorts of ways on how to improve.`}</p>
               </div>
             </div>
