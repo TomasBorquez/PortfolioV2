@@ -3,7 +3,10 @@ import s from './ProjectsSection.module.sass';
 import ProjectCard from './resources/ProjectCard';
 import Image from 'next/image';
 // Images
-import Limonada from '../../assets/img/projects/Limonada.gif';
+import LimonadaPNG from '../../assets/img/projects/LimonadaPNG.png';
+import BooksStore from '../../assets/img/projects/BookStore.png';
+import WeatherAPP from '../../assets/img/projects/WeatherAPP.png';
+import Portafolio from '../../assets/img/projects/PortafolioPNG.png';
 
 const ProjectsSection = () => {
   return (
@@ -14,43 +17,42 @@ const ProjectsSection = () => {
       <div className={s.cardsWrapper}>
         <ProjectCard
           s={s}
-          status={'online'}
+          status={'Online'}
           technologies={`SASS - React - Redux - NodeJS - Express - PostgresSQL`}
           gitLink={'https://github.com/TomasBorquez/PI-Food'}
           deployLink={'https://pi-food-one.vercel.app/'}
           project={'Limonada'}
         >
-          <Image src={Limonada} className={s.projectImage} alt="" />
+          <Image src={LimonadaPNG} className={s.projectImage} alt="" />
         </ProjectCard>
         <ProjectCard
           s={s}
-          status={'online'}
-          technologies={'React'}
-          gitLink={'https://github.com/TomasBorquez/PI-Food'}
-          deployLink={'https://pi-food-one.vercel.app/'}
-          project={'Limonada'}
+          status={'Online'}
+          technologies={'SASS - JavaScript - React - Redux - NodeJS - Express - PostgresSQL - Firebase - Nodemailer'}
+          gitLink={'https://github.com/AM4772/Henry-PF'}
+          deployLink={'https://bookstore-rose.vercel.app/'}
+          project={'BookStore'}
         >
-          <Image src={Limonada} className={s.projectImage} alt="" />
+          <Image src={BooksStore} className={s.projectImage} alt="" />
         </ProjectCard>
         <ProjectCard
           s={s}
-          status={'online'}
-          technologies={'React'}
-          gitLink={'https://github.com/TomasBorquez/PI-Food'}
-          deployLink={'https://pi-food-one.vercel.app/'}
-          project={'Limonada'}
+          status={'Online'}
+          technologies={'JavaScript - React'}
+          gitLink={'https://github.com/TomasBorquez/Climate-App'}
+          deployLink={'https://tomasborquez.github.io/Climate-App/'}
+          project={'WeatherAPP'}
         >
-          <Image src={Limonada} className={s.projectImage} alt="" />
+          <Image src={WeatherAPP} className={s.projectImage} alt="" />
         </ProjectCard>
         <ProjectCard
           s={s}
-          status={'online'}
-          technologies={'React'}
-          gitLink={'https://github.com/TomasBorquez/PI-Food'}
-          deployLink={'https://pi-food-one.vercel.app/'}
-          project={'Limonada'}
+          status={'Already here'}
+          technologies={'SASS - TypeScript - React - Redux - NextJS - NodeJS - Express - PostgresSQL'}
+          gitLink={'https://github.com/TomasBorquez/PortfolioV2'}
+          project={'Portafolio'}
         >
-          <Image src={Limonada} className={s.projectImage} alt="" />
+          <Image src={Portafolio} className={s.projectImage} alt="" />
         </ProjectCard>
       </div>
     </BluredContainerProjects>
