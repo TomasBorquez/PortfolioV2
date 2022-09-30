@@ -22,8 +22,8 @@ const ProjectCard = ({ project, s, deployLink, technologies, gitLink, status, ch
               <p>{technologies}</p>
               <div className={s.linksContainer}>
                 {status === 'Maintenance' || status === 'Already here'  || status === 'Offline' 
-                ? <a className={s.disabled}><GoEyeClosed/></a> 
-                : <a target="_blank" rel="noreferrer" href={deployLink}><GoEye/></a>}
+                ? (<a className={s.disabled}><GoEyeClosed/></a>)
+                : (<a target="_blank" rel="noreferrer" href={deployLink}><GoEye/></a>)}
                 <a target="_blank" rel="noreferrer" href={gitLink}><AiFillGithub/></a>
               </div>
             </div>
